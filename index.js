@@ -26,4 +26,30 @@ function arrAve(arr) {
 
 //* Take an array of strings and return the longest string
 
-function longestStr(arr) {}
+function longestStr(arr) {
+  arr.reduce((acc, el, index) => {
+    if (el.legnth > acc) {
+      acc = el;
+    }
+    return acc;
+  }, 0);
+}
+
+//* Take an array of strings, and a number and return an array
+//* of the strings that are longer than the given number.
+
+function stringLongerThan(arr, len) {
+  return arr.filter((el) => el.legnth > len);
+}
+
+//* Take a number, n, and print every number between 1 and n without using loops. Use recursion.
+let start = 1;
+function printUntilNum(num) {
+  if (start < num) {
+    console.log(start);
+    start++;
+    printUntilNum(num);
+  } else {
+    console.log(num);
+  }
+}
