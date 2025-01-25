@@ -49,4 +49,47 @@ function printUntilNum(num, start = 1) {
 }
 
 //! Part - 2 Thinking Methodically
-//*
+
+const data = [
+  { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+  { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+  { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+  { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+  { id: "7", name: "Bilbo", occupation: "None", age: "111" },
+];
+
+//* Sorting the array by age
+const sortedByAge = data.sort((a, b) => parseInt(a.age) - parseInt(b.age));
+
+console.log(sortedByAge);
+
+//* Filter the array to remove entries with an age greater than 50
+const youngerThan50 = data.filter((el) => el.age <= 50);
+
+console.log(youngerThan50);
+
+// Map the array to change the "occupation" key to "job" and increment every age by 1.
+const modifiedArray = data.map((obj) => {
+  obj["job"] = obj["occupation"];
+  delete obj["occupation"];
+  obj["age"] = (Number(obj["age"]) + 1).toString();
+  return obj;
+});
+
+console.log(modifiedArray);
+
+//Use the reduce method to calculate the sum of the ages.
+// o Then use the result to calculate the average age
+
+let sumAges = data.reduce((acc, val) => {
+  acc += parseInt(val.age);
+  return acc;
+}, 0);
+
+console.log("Sum of all the ages is:", sumAges);
+
+let aveAge = sumAges / data.length;
+
+console.log("Average of all the ages is:", aveAge);
+
+//! Part - 3 Thinking Critically
