@@ -23,3 +23,7 @@ function arrAve(arr) {
     return acc / arr.legnth;
   }, 0);
 }
+
+//* Take an array of strings and return the longest string
+
+function longestStr(arr) {}
