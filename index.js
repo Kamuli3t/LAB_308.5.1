@@ -70,8 +70,8 @@ console.log(youngerThan50);
 
 // Map the array to change the "occupation" key to "job" and increment every age by 1.
 const modifiedArray = data.map((obj) => {
-  obj["job"] = obj["occupation"];
-  delete obj["occupation"];
+  obj["job"] = obj?.["occupation"];
+  delete obj?.["occupation"];
   obj["age"] = (Number(obj["age"]) + 1).toString();
   return obj;
 });
@@ -82,7 +82,7 @@ console.log(modifiedArray);
 // o Then use the result to calculate the average age
 
 let sumAges = data.reduce((acc, val) => {
-  acc += parseInt(val.age);
+  acc += parseInt(val?.age);
   return acc;
 }, 0);
 
@@ -93,3 +93,31 @@ let aveAge = sumAges / data.length;
 console.log("Average of all the ages is:", aveAge);
 
 //! Part - 3 Thinking Critically
+function incrementAge(obj) {
+  if (!obj.age) {
+    obj.age = 0;
+    obj.update_at = new Date();
+  } else {
+    obj.age += 1;
+  }
+}
+
+function copyAndIncrementAge(obj) {
+  let copyObj = { ...obj }; // this will make a shallow copy
+  if (!copyObj.age) {
+    copyObj.age = 0;
+    copyObj.update_at = new Date();
+  } else {
+    copyObj.age += 1;
+  }
+  return copyObj;
+}
+
+// Since we're reassinging it to another instance of Date(),
+// it will have a difference refernce of a diffrent memory allocation. therefore,
+// we won't affect the original object.
+
+//! Part - 4 Thinking Prictically // No Questions
+
+//! Part - 5 Thinking Back
+//? I'm kind of lost which JavaScript Assesment is the part-5 talking about? Lab 308.4.1 ? 🤔
