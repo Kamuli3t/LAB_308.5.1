@@ -1,6 +1,6 @@
 //! Part-1
 //? which would make the most sense to you?
-//* I would pick this source code for it's readablity,
+//* I would pick this source code for it's readability,
 //*  and used common string methods to do the job!
 function reverseString2(str) {
   return str.split("").reverse().join("");
@@ -113,11 +113,30 @@ function copyAndIncrementAge(obj) {
   return copyObj;
 }
 
-// Since we're reassinging it to another instance of Date(),
-// it will have a difference refernce of a diffrent memory allocation. therefore,
+// Since we're reassigning it to another instance of Date(),
+// it will have a different reference of a different memory allocation. therefore,
 // we won't affect the original object.
 
-//! Part - 4 Thinking Prictically // No Questions
+//! Part - 4 Thinking Practically // No Questions
 
 //! Part - 5 Thinking Back
-//? I'm kind of lost which JavaScript Assesment is the part-5 talking about? Lab 308.4.1 ? 🤔
+//? I'm kind of lost which JavaScript Assessments is the part-5 talking about? Lab 308.4.1 ? 🤔
+// let's assume it's LAB 308.4.1
+
+// In this LAB we dealt with handling CSV data and turning them to Array of objects.
+// as well as the vice versa that's Array of objects to CSV
+// while doing so we countered some repetitive such as
+// CSV data to array of strings
+// calculating rows and columns
+// separating header from data from a conclusive array
+// Array of object's back to CSV format.
+
+// I would make 2 functions
+// the first being from CSV to Tabular format | Array of objects
+// Argument would be (CSV , format of the output : string = "")
+// this function will execute conditionally based on the string, default would be Array of objects;
+// the output would be an object with array of objects or tabular format to be logged to the console.
+
+// the 2nd from Array of objects to CSV format.
+// Argument would be (CSV)
+// this function would convert the Array of objects to CSV
